@@ -6,9 +6,9 @@ Step-by-step process utilizing microsoft exchange to create mail flow rules to b
 <br />
 
 <h2>Prerequisites</h2>
-- <b>Make a Microsoft Azure Account: https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account </b> 
-- <b>Microsoft 365 Business Premium trial (get 1st or you can't get the next trial) </b> 
-- <b>Microsoft Defender for Office 365 (plan 1) trial (get 2nd)</b> 
+- <b>Make a Microsoft Azure Account: https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account <br/> 
+- Microsoft 365 Business Premium trial (get 1st or you can't get the next trial) <br/> 
+- <b>Microsoft Defender for Office 365 (plan 1) trial (get 2nd)</b> <br/>
 
 <h2>Software Used</h2>
 
@@ -29,16 +29,7 @@ Step-by-step process utilizing microsoft exchange to create mail flow rules to b
 <br/>
 <br/>
 
-<!-- <h2>Downloads</h2>
 
--[Geographic IP Information](https://drive.google.com/file/d/13EfjM_4BohrmaxqXZLB5VUBIz2sv9Siz/view?usp=sharing)
-<br/>
--[Attack Map](https://drive.google.com/file/d/1ErlVEK5cQjpGyOcu4T02xYy7F31dWuir/view?usp=drive_link)
-<br/> -->
-
-
-
-<h1>Azure Virtual Machine Setup:</h1>
 
 <p align="left">
 

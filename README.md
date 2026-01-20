@@ -26,9 +26,9 @@ Step-by-step process utilizing microsoft exchange to create mail flow rules to b
 <br/>
 -[Azure Portal](https://portal.azure.com)
 <br/>
--[Microsoft Outlook](https://outlook.office.com/) (Use to check employee and admin emails)  
-<br/>
 -[Microsoft 365 Admin Center](https://go.microsoft.com/fwlink/?linkid=2081615) 
+<br/>
+-[Microsoft Outlook](https://outlook.office.com/) (Use to check employee and admin emails)  
 <br/>
 <br/>
 <br/>

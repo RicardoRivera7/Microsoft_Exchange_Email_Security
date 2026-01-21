@@ -181,7 +181,7 @@ In the name field call it "Block Executable Attachments" <br/>
 Under "Apply this rule if" on the left side select "Any Attachment" and on the right side select "File extension includes these words" <br/>
 This will create a new section called "Specify words or phrases" where we want to block anything that can be an executable <br/>
 You will have to add them indivdually, after typing one word click "Add" then repeat the process <br/>
-Add these words: exe, bat, js <br/>
+Add these words: exe, bat, js, zip <br/>
 Click "Save" <br/>
 <img src="https://i.imgur.com/FJ69GpS.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
@@ -208,10 +208,80 @@ Use a seperate email account that is not part of any of your users or organizati
 On the seperate gmail compose a new email, we'll need to test different scenarioes, so just pure text for this first one <br/>
 In the subject type something like "testing" and in the body put something similar <br/>
 Send it <br/>
-
 <img src="https://i.imgur.com/M0Gs6Gb.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
+Go back to your admin/employee outlook and check to see the email you just got <br/>
+You should see the warning message and below that you should see the body text that was sent by the gmail user <br/>
+That meaans our "Flag External Email" rule was successful! <br/>
+<img src="https://i.imgur.com/GWNJ2Ac.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
 
+Now we need to test our second secnario, sending a suspicious link in the body of the email <br/>
+First name the subject something like "TestLink" <br/>
+Now get any link that you know is safe, I did https://www.youtube.com/ <br/>
+Don't just paste the link, add the link as a hyperlink (Ex: in gmail click the "Insert Link" at the bottom of the email) <br/>
+Send it <br/>
+<img src="https://i.imgur.com/WkWTeAB.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Go to your outlook email, you should get the email along with the warning message and the link <br/>
+Either hover over the link with your mouse or copy paste the link address (If hovering you should see the link at the bottom of your screen) <br/>
+You should notice that the link was rewritten with safe links, its not just "https://www.youtube.com/" but instead "https://nam09.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%" (It's longer just didn't want to take up too many lines) <br/>
+This is proof safe links is working as intended and ensuring that links are secure by rewritting them! <br/>
+<img src="https://i.imgur.com/voqF8So.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Now lets test our third scenario by adding a file like a text file <br/>
+I created a notepad file called test.exe (not an actual executable) <br/>
+Name your subject something like "testfile" <br/>
+Attach it and send it <br/>
+<img src="https://i.imgur.com/T0nfrx6.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Go to your outlook and next to the file you should see that there is an arrow, click on it <br/>
+There should be a preview option, proof that Safe attachments is working since it gives you a safe preview mode <br/>
+Safe Attachments works! <br/>
+<img src="https://i.imgur.com/uKeBqwP.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Now lets test our final scenario by adding an executable attachment like a exe <br/>
+Recall the mail flow rule we made called "Block Executable Attachments", the last scenario technically should have been blocked with this rule <br/>
+We set it so that it should be quarantined, unfortunatley with our trial we can't really set up a quarantine properly so it just falls through <br/>
+But with an actual environment, everything would be sent to quarantine for admins to review and safe attachment would work as a failguard in case anything slipped through <br/>
+<br/>
+<br/>
+
+Let's make a slight change to our mail rule "Block Executable Attachments" in the Exchange admin <br/>
+Click on the rule and at the top click "Edit rule Conditions" <br/>
+Under "Do the following" on the left side select "Block the Message" and on the right side select "Reject the message and include an explanation" <br/>
+A new section "Specify rejection reason" should appear, type "Flagged as being suspicious" <br/>
+Click "Save" <br/>
+<img src="https://i.imgur.com/R7WvTHQ.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+This updated rule will just outright block any attachments instead of trying to send them for review and quarantine <br/>
+<br/>
+<br/>
+
+Either find or make your own exe file and zip it up since gmail doesn't allow exe to be sent <br/>
+Name the subject something like "TestingAttachment" <br/>
+No need to put anything in the body, just attach the zip file that contains the exe <br/>
+Send it <br/>
+<img src="https://i.imgur.com/BPse9kn.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Go to your outlook email, wait a bit and you should not receive any email <br/>
+That means the block rule has worked <br/>
+<br/>
+
+You have successfully implemnted Microsoft Exchange Security policies and rules! <br/> 
 

@@ -149,5 +149,69 @@ So you should see the 2 policies you created under each section (not counting an
 <h2>Creating Mail flow rules</h2>
 
 Let's Navigate to the Microsoft Exchange Admin Center so we can create some mail flow rules to cover additional points <br/>
+On the left Under "Mail Flow" click on "Rules" <br/>
+We're gonna add 2 rules, first we're gonna make a rule to flag external emails <br/>
+<br/>
+<br/>
+
+At the top click "Add rule" then "Create new rule" <br/>
+Name it "Flag External Emails" <br/>
+Under "Apply this rule if" on the left side select "The sender" and on the right select "is External/Internal" <br/>
+This will create a new section called "Select sender location", pick "Outside the organization for this" <br/>
+Under the "Do the following" on the left side select "Apply a disclaimer to the message" and on the right select "prepend a disclaimer" <br/>
+There should now be blue text that says "Enter Text", click on it <br/>
+Add this text "Warning: This email has originated from outside the organization! Please verify the sender before clicking links or attachments" and click "Save" <br/>
+There should be blue text that also says "Select One", Click on it and choose "Wrap" <br/>
+<img src="https://i.imgur.com/CS6GcNt.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Click "Next" <br/>
+Select "Severity" and choose "High" <br/>
+Check the box for "Activate this rule on" <br/>
+Click "Finish" <br/>
+Now you have your first rule, this checks if the sender is out of the organization, if it is it sends a warning messsage to the user advising them caution <br/>
+<img src="https://i.imgur.com/r6wIZVH.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Let's make our second rule to block executable attachments <br/>
+Create a new rule <br/>
+In the name field call it "Block Executable Attachments" <br/>
+Under "Apply this rule if" on the left side select "Any Attachment" and on the right side select "File extension includes these words" <br/>
+This will create a new section called "Specify words or phrases" where we want to block anything that can be an executable <br/>
+You will have to add them indivdually, after typing one word click "Add" then repeat the process <br/>
+Add these words: exe, bat, js <br/>
+Click "Save" <br/>
+<img src="https://i.imgur.com/FJ69GpS.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Under "Do the following" on the left side select "Redirect the message to" and on the right side select "hosted quarantine" <br/>
+This will send any message it detects with exe, js, or bat extension to the Defender Quarantine Mailbox <br/>
+Click "Next" <br/>
+Under "Severity" select "High" <br/>
+Check the box for "Activate this rule on" <br/>
+Click "Finish" <br/>
+You should now see the two mail flow rules you created! <br/>
+<img src="https://i.imgur.com/ApUqIKs.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+<h2>Testing and Validating Rules</h2>
+
+Go to Microsoft outlook and login to either your employee or admin account <br/>
+If it's your first time logging in go through the first time account setup process (this is where your saved passwords will come in handy) <br/>
+Once done navigate to your inbox <br/>
+Go to your Microsoft 365 admin center, find the usser you want to send mail to and copy their associated username under the "Username" section <br/>
+Use a seperate email account that is not part of any of your users or organization, for example I made a new gmail account so that I could send mail to my employee user (for now I'll refer to this as the gmail user) <br/>
+On the seperate gmail compose a new email, we'll need to test different scenarioes, so just pure text for this first one <br/>
+In the subject type something like "testing" and in the body put something similar <br/>
+Send it <br/>
+
+<img src="https://i.imgur.com/M0Gs6Gb.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
 
 

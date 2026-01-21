@@ -37,14 +37,15 @@ Step-by-step process utilizing microsoft exchange to create mail flow rules to b
 
 <p align="left">
 
-<h2>Creating a Resource Group</h2>
+<h2>Creating Users and assigning Licenses</h2>
 
-Go to the Azure portal at the homepage and click on "Resource Groups" <br/>
-Click "Create" <br/>
-If you're using a Free account then the Subscription section will be something like "Azure Subscription 1", it should already be selected for you <br/>
-For "Resource Group Name", name it whatever you like, I named mine "SOCLab" <br/>
-For "Region" select something near you or that is in a reasonable distance that wont cause connection issues, and keep in mind which one you choose as we'll need this in the future too <br/>
-<img src="https://i.imgur.com/oKKF1z5.png" height="80%" width="80%" alt="AzureCloudSOC"/>
+Go to the Microsoft 365 Admin center create an account if you do not have one, this will be your global admin <br/>
+On the left side click on "Users" then "Active Users" <br/>
+On this page you should see an option to "Add User" <br/>
+Let's make an employee account first (make as many as you want), enter a display name such as employee1 or employee-john  <br/>
+For the username you can copy whatever you entered in display name or mix them (Ex: For display name I did employee-jojo and for username i did employee9) <br/>
+Leave the two checkboxes toggled <br/>
+<img src="https://i.imgur.com/rmTBInE.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
@@ -52,83 +53,61 @@ Click the blue "Review + Create" button <br/>
 Then click the blue "Create" button <br/>
 Refresh the page and you should see your resource group there! <br/>
 <em>Note: don't mind the other resource groups you see in my screenshot, those were just for fun, you will only have the one you made</em> <br/>
-<img src="https://i.imgur.com/78dmS0D.png" height="80%" width="80%" alt="AzureCloudSOC"/>
+<img src="https://i.imgur.com/78dmS0D.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
-<h2>Creating a Vritual Network</h2>
 
-Now we need to create a virtual network for our VM to connect to once its made <br/>
-Navigate back to the home page and click on "Virtual Networks" <br/>
-Do the Following: <br/>
-<em>For "Subscription", make sure it is set to your correct one, in my case its "Azure Subscription 1" <br/>
-For "Resource Group", select the one you made in the previous section, for me it was "SOCLab" <br/>
-For "Virtual Network Name", make it any name you want <br/>
-For "Region", select the same one you used to make the resource group, mine was US West 2 <br/> </em>
-<img src="https://i.imgur.com/IgnjHtg.png" height="80%" width="80%" alt="AzureCloudSOC"/>
+
+Click "Next" <br/>
+Assign the two licenses to the account (Microsoft 365 Business Premium and Microsoft Defender for Office 365 Plan 1) <br/>
+Click "Next" <br/>
+<img src="https://i.imgur.com/Hgax8Ep.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
-Click the blue "Review + Create" button <br/>
-Then click the blue "Create" button <br/>
-You should get a deployment page and confirmation it has been deployed, this could take a minute <br/>
-<img src="https://i.imgur.com/Uo4W8dc.png" height="80%" width="80%" alt="AzureCloudSOC"/>
+
+In the "Optional Settings" section make sure role is toggled as User and finish making the account <br/>
+Once done go to the password, click "Show" and copy the password somewhere to save it  <br/>
+Now add another user except for admin <br/>
+make both the display and user name the samething <br/>
+In the "Optional Settings" section, set the role to "Admin Center Access" and check the boxes for "Exchange Administrator" and "User Administrator" <br/>
+<img src="https://i.imgur.com/yhosxI5.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
-<h2>Creating a Virtual Machine</h2>
+Finish making the account and save the password for this one too <br/>
+Congrats you now have both an admin and user account with the appropriate licenses <br/>
 
-It's time to create the virtual machine! <br/>
-Navigate back to the home page and click on "Virtual Machines" <br/>
-Click "Create" and select the "Virtual Machine" option <br/>
-<img src="https://i.imgur.com/5rpizrH.png" height="80%" width="80%" alt="AzureCloudSOC"/>
-<br/>
-<br/>
+<h2>Creating and Managing Defender Policies</h2>
 
-Do the Following:
-<em>For "Resource Group", select the one you made <br/>
-For "Virtual Machine Name", name it whatever you want, I did BlueTeamMachine <br/>
-For "Region", select the same one you've been using so far <br/>
-For "Zone Options", you can select "Azure-Selected Zone" to let it autopick for you, otherwise you can do "Self-Selected" zone to pick yourself <br/>
-You can leave "Security Type" on "Trusted launch Virtual machines" <br/>
-<img src="https://i.imgur.com/gft0rYA.png" height="80%" width="80%" alt="AzureCloudSOC"/>
+Our licenses gives us some nice options to manage in Defender such as Safe links, and phishing policies <br/>
+Navigate to the defender portal and sign in with your global admin account (Not the admin account you created before, this will be the main account you made whe signing up for Azure) <br/>
+On the left side click on "Email and Collaboration" and click on "Policies and rules" <br/>
+Click on "Threat Policies" <br/>
+We can see s lot of options, but we want to configure safe links and safe attachments so that users won't be able to receive them from outside the organization <br/>
+<img src="https://i.imgur.com/GUIK91q.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
-For "Image" im picking windows 10, to do this click on the dropdown next to image and scroll all the way down to click on "See all images" <br/>
-Search for "Windows 10" if you don't see it on the front page <br/>
-Select it and choose any of the Gen 2 images <br/>
-<img src="https://i.imgur.com/KidmTj7.png" height="80%" width="80%" alt="AzureCloudSOC"/>
+Click on "Safe Links" and click on "Built-in protection (Microsoft)" <br/>
+At the top click on "View preset security policies" <br/>
+We want to turn standard protection on, so click on "Manage Protection settings" <br/>
+Select "All recipients" for each section <br/>
+For the Impersonation section add your employee and admin, do this by clicking on the "Add a Valid email" which will show all of your users <br/>
+<img src="https://i.imgur.com/zyARYHW.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
-For "Username" and "Password" you can set those to whatever you want <br/>
-Make sure "Public Inbound Ports" has the "Allowed Selected Ports" option chosen <br/>
-Make sure "Select Inbound Ports" has RDP (Remote Desktop Protocol) 3389 on <br/>
-Under "Licensing" check the box </em><br/>
-<img src="https://i.imgur.com/3g1yKSm.png" height="80%" width="80%" alt="AzureCloudSOC"/>
+On the "Policy Mode" section select "Turn on policy when finished" <br/>
+Click "Next" and then "Confirm" <br/>
+Should see that Standard Policy Protection is now toggled on <br/>
+<img src="https://i.imgur.com/ZahiUCu.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
-Click "Next" until you get to the "Networking section" <br/>
-Find the checkbox for "Delete public IP and NIC when VM is deleted" and check it, this will make sure your VM and anything associated with it is completley wiped if you delete it <br/>
 
-<img src="https://i.imgur.com/3g1yKSm.png" height="80%" width="80%" alt="AzureCloudSOC"/>
-<br/>
-<br/>
 
-Click the blue "Review + Create" button <br/>
-Then click the blue "Create" button <br/>
-You should get a deployment page and confirmation it has been deployed, this could take a minute <br/>
-<img src="https://i.imgur.com/m78nNGU.png" height="80%" width="80%" alt="AzureCloudSOC"/>
-<br/>
-<br/>
+<h2>Creating Mail flow rules</h2>
 
-<h2>Creating and Configuring Log Analytics Workspace</h2>
 
-Navigate back to the home page <br/>
-Under "Azure Services", click on the arrow that says "More Services" <br/>
-In the search bar type in "Log" and select "Log Analytics Workspaces" <br/>
-<img src="https://i.imgur.com/yTUhEM6.png" height="80%" width="80%" alt="AzureCloudSOC"/>
-<br/>
-<br/>

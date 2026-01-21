@@ -106,8 +106,48 @@ Should see that Standard Policy Protection is now toggled on <br/>
 <br/>
 <br/>
 
+There should be a new Policy called "Standard Preset Security Policy" under safe links <br/>
+This also applies to safe attachments, naviagte to the "safe attachments" section and verify that the "Standard Preset Security Policy" also appears there <br/>
+<br/>
+
+<h2>Anit-Phishing Policy Creation</h2>
+
+Under the "Email and Collboration" section, click on "Policies and Rules" <br/>
+Click on "Anti-Phishing" <br/>
+Click on "Create" <br/>
+Name it something like "Anti-phishing Policy" and click "Next" <br/>
+Add your employee and Admin users then click "Next" <br/>
+Check the Box for "Enable Users to protect" and click "Manage 0 Sender(s)" <br/>
+Click "Add User" and add your employee and admin users <br/>
+Click the "Add" button on the bottom once selected then done<br/>
+<img src="https://i.imgur.com/AhMLQya.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+The "Manage 0 Sender(s)" should then turn to show however many users you added ( Ex: Manage 2 Sender(s) ) <br/>
+Check the Box for "Enable domains to protect" then check the box for "Include domains I own" <br/>
+Click "Next" <br/>
+<img src="https://i.imgur.com/kP9F97J.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+Under "Message Actions" section, for "if a messagee is detected as User Impersonation" and "If as message is dected as domain impersonation" set both options as "Quarantine the message" <br/>
+Set both of the "Apply Quarantine Policy" as "AdminOnlyAccessPolicy" so that only admins may view this in Defender Quarantine <br/>
+Under "Safety tips and Indicators" check the box for "Show first contact safety tip" to show them a warning for new users and users they don't normally receive from <br/>
+Click "Next" and Click "Submit" <br/>
+Your Anti-phishing policy should now be created! <br/>
+<img src="https://i.imgur.com/eG2meYe.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
+
+So you should see the 2 policies you created under each section (not counting any defaults that show) <br/>
+<img src="https://i.imgur.com/XZ5okeJ.png" height="80%" width="80%" alt="ExchangeSecurity"/>
+<br/>
+<br/>
 
 
 <h2>Creating Mail flow rules</h2>
+
+Let's Navigate to the Microsoft Exchange Admin Center so we can create some mail flow rules to cover additional points <br/>
 
 

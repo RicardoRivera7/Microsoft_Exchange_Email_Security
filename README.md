@@ -70,7 +70,7 @@ Click "Next" <br/>
 In the "Optional Settings" section make sure role is toggled as User and finish making the account <br/>
 Once done go to the password, click "Show" and copy the password somewhere to save it  <br/>
 Now add another user except for admin <br/>
-make both the display and user name the samething <br/>
+make both the display and user name the same thing <br/>
 In the "Optional Settings" section, set the role to "Admin Center Access" and check the boxes for "Exchange Administrator" and "User Administrator" <br/>
 <img src="https://i.imgur.com/yhosxI5.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
@@ -85,7 +85,7 @@ Our licenses gives us some nice options to manage in Defender such as Safe links
 Navigate to the defender portal and sign in with your global admin account (Not the admin account you created before, this will be the main account you made whe signing up for Azure) <br/>
 On the left side click on "Email and Collaboration" and click on "Policies and rules" <br/>
 Click on "Threat Policies" <br/>
-We can see s lot of options, but we want to configure safe links and safe attachments so that users won't be able to receive them from outside the organization <br/>
+We can see a lot of options, but we want to configure safe links and safe attachments so that users won't be able to receive them from outside the organization <br/>
 <img src="https://i.imgur.com/GUIK91q.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
@@ -107,12 +107,12 @@ Should see that Standard Policy Protection is now toggled on <br/>
 <br/>
 
 There should be a new Policy called "Standard Preset Security Policy" under safe links <br/>
-This also applies to safe attachments, naviagte to the "safe attachments" section and verify that the "Standard Preset Security Policy" also appears there <br/>
+This also applies to safe attachments, navigate to the "safe attachments" section and verify that the "Standard Preset Security Policy" also appears there <br/>
 <br/>
 
-<h2>Anit-Phishing Policy Creation</h2>
+<h2>Anti-Phishing Policy Creation</h2>
 
-Under the "Email and Collboration" section, click on "Policies and Rules" <br/>
+Under the "Email and Collaboration" section, click on "Policies and Rules" <br/>
 Click on "Anti-Phishing" <br/>
 Click on "Create" <br/>
 Name it something like "Anti-phishing Policy" and click "Next" <br/>
@@ -131,7 +131,7 @@ Click "Next" <br/>
 <br/>
 <br/>
 
-Under "Message Actions" section, for "if a messagee is detected as User Impersonation" and "If as message is dected as domain impersonation" set both options as "Quarantine the message" <br/>
+Under "Message Actions" section, for "if a message is detected as User Impersonation" and "If as message is detected as domain impersonation" set both options as "Quarantine the message" <br/>
 Set both of the "Apply Quarantine Policy" as "AdminOnlyAccessPolicy" so that only admins may view this in Defender Quarantine <br/>
 Under "Safety tips and Indicators" check the box for "Show first contact safety tip" to show them a warning for new users and users they don't normally receive from <br/>
 Click "Next" and Click "Submit" <br/>
@@ -170,7 +170,7 @@ Click "Next" <br/>
 Select "Severity" and choose "High" <br/>
 Check the box for "Activate this rule on" <br/>
 Click "Finish" <br/>
-Now you have your first rule, this checks if the sender is out of the organization, if it is it sends a warning messsage to the user advising them caution <br/>
+Now you have your first rule, this checks if the sender is out of the organization, if it is it sends a warning message to the user advising them caution <br/>
 <img src="https://i.imgur.com/r6wIZVH.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
@@ -180,7 +180,7 @@ Create a new rule <br/>
 In the name field call it "Block Executable Attachments" <br/>
 Under "Apply this rule if" on the left side select "Any Attachment" and on the right side select "File extension includes these words" <br/>
 This will create a new section called "Specify words or phrases" where we want to block anything that can be an executable <br/>
-You will have to add them indivdually, after typing one word click "Add" then repeat the process <br/>
+You will have to add them individually, after typing one word click "Add" then repeat the process <br/>
 Add these words: exe, bat, js, zip <br/>
 Click "Save" <br/>
 <img src="https://i.imgur.com/FJ69GpS.png" height="80%" width="80%" alt="ExchangeSecurity"/>
@@ -203,9 +203,9 @@ You should now see the two mail flow rules you created! <br/>
 Go to Microsoft outlook and login to either your employee or admin account <br/>
 If it's your first time logging in go through the first time account setup process (this is where your saved passwords will come in handy) <br/>
 Once done navigate to your inbox <br/>
-Go to your Microsoft 365 admin center, find the usser you want to send mail to and copy their associated username under the "Username" section <br/>
-Use a seperate email account that is not part of any of your users or organization, for example I made a new gmail account so that I could send mail to my employee user (for now I'll refer to this as the gmail user) <br/>
-On the seperate gmail compose a new email, we'll need to test different scenarioes, so just pure text for this first one <br/>
+Go to your Microsoft 365 admin center, find the user you want to send mail to and copy their associated username under the "Username" section <br/>
+Use a separate email account that is not part of any of your users or organization, for example I made a new gmail account so that I could send mail to my employee user (for now I'll refer to this as the gmail user) <br/>
+On the separate gmail compose a new email, we'll need to test different scenarios, so just pure text for this first one <br/>
 In the subject type something like "testing" and in the body put something similar <br/>
 Send it <br/>
 <img src="https://i.imgur.com/M0Gs6Gb.png" height="80%" width="80%" alt="ExchangeSecurity"/>
@@ -214,12 +214,12 @@ Send it <br/>
 
 Go back to your admin/employee outlook and check to see the email you just got <br/>
 You should see the warning message and below that you should see the body text that was sent by the gmail user <br/>
-That meaans our "Flag External Email" rule was successful! <br/>
+That means our "Flag External Email" rule was successful! <br/>
 <img src="https://i.imgur.com/GWNJ2Ac.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
 
-Now we need to test our second secnario, sending a suspicious link in the body of the email <br/>
+Now we need to test our second scenario, sending a suspicious link in the body of the email <br/>
 First name the subject something like "TestLink" <br/>
 Now get any link that you know is safe, I did https://www.youtube.com/ <br/>
 Don't just paste the link, add the link as a hyperlink (Ex: in gmail click the "Insert Link" at the bottom of the email) <br/>
@@ -231,7 +231,7 @@ Send it <br/>
 Go to your outlook email, you should get the email along with the warning message and the link <br/>
 Either hover over the link with your mouse or copy paste the link address (If hovering you should see the link at the bottom of your screen) <br/>
 You should notice that the link was rewritten with safe links, its not just "https://www.youtube.com/" but instead "https://nam09.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%" (It's longer just didn't want to take up too many lines) <br/>
-This is proof safe links is working as intended and ensuring that links are secure by rewritting them! <br/>
+This is proof safe links is working as intended and ensuring that links are secure by rewriting them! <br/>
 <img src="https://i.imgur.com/voqF8So.png" height="80%" width="80%" alt="ExchangeSecurity"/>
 <br/>
 <br/>
@@ -253,8 +253,8 @@ Safe Attachments works! <br/>
 
 Now lets test our final scenario by adding an executable attachment like a exe <br/>
 Recall the mail flow rule we made called "Block Executable Attachments", the last scenario technically should have been blocked with this rule <br/>
-We set it so that it should be quarantined, unfortunatley with our trial we can't really set up a quarantine properly so it just falls through <br/>
-But with an actual environment, everything would be sent to quarantine for admins to review and safe attachment would work as a failguard in case anything slipped through <br/>
+We set it so that it should be quarantined, unfortunately with our trial we can't really set up a quarantine properly so it just falls through <br/>
+But with an actual environment, everything would be sent to quarantine for admins to review and safe attachment would work as a safeguard in case anything slipped through <br/>
 <br/>
 <br/>
 
@@ -283,5 +283,5 @@ Go to your outlook email, wait a bit and you should not receive any email <br/>
 That means the block rule has worked <br/>
 <br/>
 
-You have successfully implemnted Microsoft Exchange Security policies and rules! <br/> 
+You have successfully implemented Microsoft Exchange Security policies and rules! <br/> 
 

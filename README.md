@@ -23,13 +23,13 @@ Step-by-step process utilizing microsoft exchange to create mail flow rules to b
 
 <h2>Links</h2>
 
--[Azure Free Subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account)
+- [Azure Free Subscription](https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account)
 <br/>
--[Azure Portal](https://portal.azure.com)
+- [Azure Portal](https://portal.azure.com)
 <br/>
--[Microsoft 365 Admin Center](https://go.microsoft.com/fwlink/?linkid=2081615) 
+- [Microsoft 365 Admin Center](https://go.microsoft.com/fwlink/?linkid=2081615) 
 <br/>
--[Microsoft Outlook](https://outlook.office.com/) (Use to check employee and admin emails)  
+- [Microsoft Outlook](https://outlook.office.com/) (Use to check employee and admin emails)  
 <br/>
 <br/>
 <br/>

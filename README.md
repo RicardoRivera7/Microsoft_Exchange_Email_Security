@@ -1,9 +1,9 @@
-<h1>Microsoft Exchnage Email Security</h1>
+<h1>Microsoft Exchange Email Security</h1>
 
 
 <h2>Description</h2>
 Step-by-step process utilizing microsoft exchange to create mail flow rules to block suspicious emails, links and attachments
-<br />
+<br/>
 
 <h2>Prerequisites</h2>
 - <b>Make a Microsoft Azure Account: https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account <br/> 

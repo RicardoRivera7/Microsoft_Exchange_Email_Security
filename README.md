@@ -6,9 +6,9 @@ Step-by-step process utilizing microsoft exchange to create mail flow rules to b
 <br/>
 
 <h2>Prerequisites</h2>
-- <b>Make a Microsoft Azure Account: https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account <br/> 
-- Microsoft 365 Business Premium trial (get 1st or you can't get the next trial) <br/> 
-- Microsoft Defender for Office 365 (plan 1) trial (get 2nd)</b> <br/>
+- <b>Make a Microsoft Azure Account: https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account</b> <br/> 
+- <b>Microsoft 365 Business Premium trial (get 1st or you can't get the next trial)</b> <br/> 
+- <b>Microsoft Defender for Office 365 (plan 1) trial (get 2nd)</b> <br/>
 
 <h2>Software Used</h2>
 
